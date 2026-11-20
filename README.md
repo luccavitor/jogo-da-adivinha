@@ -1,1 +1,1 @@
-# jogo-da-adivinha-o---projeto
+# jogo-da-adivinhação
