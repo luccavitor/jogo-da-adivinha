@@ -1,35 +1,68 @@
-<h1>🎯 Jogo da Adivinhação em C++</h1>
+# Jogo da Adivinhação em C++
 
-Projeto desenvolvido durante meus estudos de C++, com o objetivo de praticar conceitos fundamentais da linguagem por meio da criação de um jogo de adivinhação.
+Projeto desenvolvido durante meus estudos de **C++**, com o objetivo de praticar conceitos fundamentais da linguagem por meio da criação de um jogo de adivinhação com sistema de pontuação.
 
-<h2>📌 Sobre o projeto</h2>
+## Sobre o projeto
 
-O jogo consiste em descobrir um número secreto definido no código. A cada tentativa, o programa informa se o número digitado é maior ou menor que o número secreto, até que o jogador consiga acertar.
+O jogo consiste em descobrir um número secreto definido no código. A cada tentativa, o programa informa se o número digitado é maior ou menor que o número secreto.
 
-Ao finalizar, o programa apresenta a quantidade de tentativas utilizadas.
+Além de contar as tentativas, o jogo possui um sistema de pontuação: o jogador começa com 1.000 pontos e perde pontos de acordo com a distância entre o número digitado e o número secreto.
 
-<h2>⚙️ Funcionalidades</h2>
+O objetivo é acertar o número utilizando o menor número de tentativas e mantendo a maior pontuação possível.
 
-- Número secreto definido no código (42).
+## Funcionalidades
 
-- Leitura de dados inseridos pelo usuário.
-
-- Verificação se o chute é maior ou menor que o número secreto.
-
+- Número secreto definido no código (`42`).
+- Leitura de números digitados pelo usuário.
+- Indicação se o chute é maior ou menor que o número secreto.
 - Contagem automática de tentativas.
+- Sistema de pontuação inicial de 1.000 pontos.
+- Desconto de pontos proporcional à distância entre o chute e o número secreto.
+- Exibição da pontuação final com duas casas decimais.
 
-- Mensagem de conclusão ao acertar o número.
+## Sistema de pontuação
 
-<h2>💻 Conceitos de C++ praticados</h2>
+O jogador começa com **1.000 pontos**.
+
+A cada tentativa, o programa calcula a distância entre o número digitado e o número secreto. Metade dessa distância é descontada da pontuação.
+
+**Fórmula utilizada:**
+
+```cpp
+double pontos_perdidos = abs(chute - NUMERO_SECRETO) / 2.0;
+pontos = pontos - pontos_perdidos;
+```
+
+Quanto mais distante o chute estiver do número secreto, maior será o desconto de pontos.
+
+**Exemplo:**
+
+Considerando que o número secreto seja 42:
+
+| Chute | Distância | Pontos descontados |
+|---|---:|---:|
+| 40 | 2 | 1 |
+| 30 | 12 | 6 |
+| 20 | 22 | 11 |
+| 50 | 8 | 4 |
+
+## Conceitos de C++ praticados
 
 - Variáveis e constantes.
+- Tipos de dados (`int`, `bool` e `double`).
+- Estruturas condicionais (`if`, `else if`).
+- Estrutura de repetição (`while`).
+- Entrada e saída de dados (`cin` e `cout`).
+- Operadores aritméticos e relacionais.
+- Função `abs()` para obter valores absolutos.
+- Formatação de números decimais com `precision()` e `fixed`.
 
-- Tipos de dados (int e bool).
+## Objetivo
 
-- Estruturas condicionais (if, else if).
+Este projeto faz parte da minha jornada de aprendizado em programação e desenvolvimento de software, permitindo aplicar conceitos fundamentais de C++ na construção de um programa interativo.
 
-- Estrutura de repetição (while).
+---
 
-- Entrada e saída de dados (cin e cout).
+**Status:** Em andamento 
 
-- Operadores relacionais e lógicos.
+**Linguagem:** C++
